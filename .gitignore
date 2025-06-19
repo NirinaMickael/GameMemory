@@ -1,0 +1,64 @@
+# --------------------
+# Global ignores
+# --------------------
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.swp
+.vscode/
+.idea/
+
+# --------------------
+# Python (backend)
+# --------------------
+app/backend/__pycache__/
+app/backend/*.pyc
+app/backend/*.pyo
+app/backend/*.pyd
+app/backend/.env
+
+# --------------------
+# Node (frontend)
+# --------------------
+app/frontend/node_modules/
+app/frontend/dist/
+app/frontend/build/
+app/frontend/.env
+
+#  cache vite
+app/frontend/.cache/
+
+# Logs
+app/frontend/logs
+app/frontend/*.log
+app/frontend/npm-debug.log*
+app/frontend/yarn-debug.log*
+app/frontend/yarn-error.log*
+app/frontend/pnpm-debug.log*
+app/frontend/lerna-debug.log*
+
+app/frontend/dist-ssr
+app/frontend/*.local
+
+# Editor directories and files
+app/frontend/.vscode/*
+app/frontend/!.vscode/extensions.json
+app/frontend/.idea
+app/frontend/.DS_Store
+app/frontend/*.suo
+app/frontend/*.ntvs*
+app/frontend/*.njsproj
+app/frontend/*.sln
+app/frontend/*.sw?
+
+# --------------------
+# Docker volumes / DB
+# --------------------
+GAMEMEMORYDB/
+
+# --------------------
+# Misc
+# --------------------
+*.tgz
+*.zip
