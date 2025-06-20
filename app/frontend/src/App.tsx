@@ -1,11 +1,8 @@
+import { AppRoutes } from "./app/routes/AppRoute"
+
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl text-red-400" > 
-
-        App
-      </h1>
-    </div>
+    <AppRoutes />
   )
 }
 
