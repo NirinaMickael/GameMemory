@@ -1,5 +1,4 @@
-import { useRouter } from "./useRouter";
+import { useRouter } from './useRouter';
+import { useTheme } from './useTheme';
 
-export {
-    useRouter
-}
+export { useRouter, useTheme };

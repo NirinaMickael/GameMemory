@@ -13,7 +13,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@component/*":["./src/component/*"]
+      "@component/*":["./src/component/*"],
+      "@common/*":["./src/common/*"],
+      "@features/*":["./src/features/*"],
+
     },
   }
 }
