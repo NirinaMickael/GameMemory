@@ -1,5 +1,41 @@
 {
     "header":{
         "gameTitle": "Jeux de Memoire"
-    }
+    },
+    "timeAgo": {
+      "justNow": "à l'instant",
+      "minutesAgo": "il y a {count} {unit}",
+      "hoursAgo": "il y a {count} {unit}",
+      "daysAgo": "il y a {count} {unit}",
+      "minute": "minute",
+      "minutes": "minutes",
+      "hour": "heure",
+      "hours": "heures",
+      "day": "jour",
+      "days": "jours"
+    },
+    "game": {
+    "gameTitle": "Memory Game",
+    "gameSubtitle": "Testez votre mémoire avec ce jeu de concentration classique",
+    "gameConfiguration": "Configuration du jeu",
+    "gameConfigurationDesc": "Personnalisez votre expérience de jeu",
+    "cardTheme": "Thème des cartes",
+    "numbers": "Nombres",
+    "icons": "Icônes",
+    "gridSize": "Taille de la grille",
+    "playerCount": "Nombre de joueurs",
+    "playerNames": "Noms des joueurs",
+    "startGame": "Commencer la partie",
+    "solo": "Solo",
+    "players": "joueurs",
+    "moves": "Coups",
+    "time": "Temps",
+    "pairs": "paires",
+    "currentTurn": "Tour de",
+    "yourTurn": "À votre tour !",
+    "gameCompleted": "Partie terminée !",
+    "congratulations": "Félicitations !",
+    "completedInMoves": "Vous avez terminé en {moves} coups !",
+    "winnerIs": "Victoire de {winner} !"
+  }
 }
