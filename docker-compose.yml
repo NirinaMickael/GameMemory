@@ -7,7 +7,7 @@ services:
   GAMEMEMORY_DB:
     restart: unless-stopped
     tty: true
-    image: postgres:15
+    image: arm64v8/postgres:15
     container_name: GAMEMEMORY_DB
     networks: [GameMemoryNetworkDB]
     ports: ["4002:5432"]
@@ -34,12 +34,8 @@ services:
     networks:
       - GameMemoryNetworkDB
       - GameMemoryNetworkBridge
-    environment:
-      - DB_USERNAME=root
-      - DB_PASSWORD=azerty007!
-      - DB_NAME=GAMEMEMORY_TT_DB
-      - DB_HOST=GAMEMEMORY_DB
-      - DB_DIALECT=postgres
+    env_file:
+      - ./app/backend/.env
 
   # ==========================================================================
   # --------------------------------- FRONT -----------------------------------

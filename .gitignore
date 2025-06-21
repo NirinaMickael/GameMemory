@@ -13,6 +13,7 @@ Thumbs.db
 # Python (backend)
 # --------------------
 app/backend/__pycache__/
+app/backend/*/__pycache__/
 app/backend/*.pyc
 app/backend/*.pyo
 app/backend/*.pyd
