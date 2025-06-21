@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Gamepad2, Settings } from 'lucide-react';
+import { Gamepad2, Settings, Trophy } from 'lucide-react';
 import { useGameActions, useGameState } from '@/common/store';
 import { ControlledInput, ControlledSelect } from '@/components/form';
 import { useRouter, useTranslation } from '@/common/hooks';
@@ -36,21 +36,21 @@ export function HomePage() {
     mode: 'onChange',
     defaultValues: {
       theme: 'numbers',
-      gridSize: '4x4',
-      playerCount: '1',
+      grid_size: '4x4',
+      player_count: '1',
       playerNames: [formatMessage('Joueur {number}', { number: 1 })],
     },
   });
 
-  const playerCount = Number(form.watch('playerCount'));
+  const player_count = Number(form.watch('player_count'));
 
   useEffect(() => {
     const names = form.getValues('playerNames');
-    const newNames = Array.from({ length: playerCount }, (_, i) => {
+    const newNames = Array.from({ length: player_count }, (_, i) => {
       return names[i] || formatMessage('Joueur {number}', { number: i + 1 });
     });
     form.setValue('playerNames', newNames);
-  }, [playerCount]);
+  }, [player_count]);
 
   useEffect(() => {
     if (savedGame) {
@@ -64,7 +64,7 @@ export function HomePage() {
 
   const onSubmit = (data: gameSettingValues) => {
     const players: Player[] = data.playerNames
-      .slice(0, playerCount)
+      .slice(0, player_count)
       .map((name, index) => ({
         id: index,
         name,
@@ -74,9 +74,9 @@ export function HomePage() {
 
     setGameConfig({
       theme: data.theme,
-      gridSize: data.gridSize,
-      mode: playerCount === 1 ? 'solo' : 'multiplayer',
-      playerCount,
+      grid_size: data.grid_size,
+      mode: player_count === 1 ? 'solo' : 'multiplayer',
+      player_count,
       players,
     });
     router.push('/game');
@@ -157,14 +157,14 @@ export function HomePage() {
                 </div>
 
                 <ControlledSelect
-                  name="gridSize"
+                  name="grid_size"
                   control={form.control}
                   label={t('game.gridSize')}
                   options={[{ value: '4x4', label: '4×4 (16 cartes)' }]}
                 />
 
                 <ControlledSelect
-                  name="playerCount"
+                  name="player_count"
                   control={form.control}
                   label={t('game.playerCount')}
                   options={[
@@ -175,13 +175,13 @@ export function HomePage() {
                   ]}
                 />
 
-                {playerCount > 1 && (
+                {player_count > 1 && (
                   <div className="space-y-3">
                     <Label className="text-base font-semibold">
                       {t('game.playerNames')}
                     </Label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {Array.from({ length: playerCount }, (_, i) => (
+                      {Array.from({ length: player_count }, (_, i) => (
                         <div key={i} className="flex items-center space-x-2">
                           <div
                             className={`w-4 h-4 rounded-full ${PLAYER_COLORS[i]}`}
@@ -211,7 +211,26 @@ export function HomePage() {
             </FormProvider>
           </CardContent>
         </Card>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <Button
+          variant="outline"
+          onClick={() => router.push("/leaderboard")}
+          className="h-12 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-purple-200 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/20"
+        >
+          <Trophy className="mr-2 h-4 w-4" />
+          {t("leaderboard")}
+        </Button>
+        <Button
+          variant="outline"
+          onClick={() => router.push("/stats")}
+          className="h-12 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-blue-200 dark:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+        >
+          <Settings className="mr-2 h-4 w-4" />
+          {t("statistics")}
+        </Button>
       </div>
+      </div>
+
     </div>
   );
 }

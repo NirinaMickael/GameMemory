@@ -5,9 +5,9 @@ export type Score = {
   moves: number
   duration: number
   theme: GameTheme
-  gridSize: GridSize
+  grid_size: GridSize
   mode: GameMode
-  playerCount: number
+  player_count: number
   winner?: string
-  createdAt: string
+  created_at: string
 }

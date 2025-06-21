@@ -1,5 +1,76 @@
 {
-    "header":{
-        "gameTitle": "Memory Game"
-    }
+  "header": {
+    "gameTitle": "Memory Game"
+  },
+  "timeAgo": {
+    "justNow": "just now",
+    "minutesAgo": "{count} {unit} ago",
+    "hoursAgo": "{count} {unit} ago",
+    "daysAgo": "{count} {unit} ago",
+    "minute": "minute",
+    "minutes": "minutes",
+    "hour": "hour",
+    "hours": "hours",
+    "day": "day",
+    "days": "days"
+  },
+  "game": {
+    "gameTitle": "Memory Game",
+    "gameSubtitle": "Test your memory with this classic concentration game",
+    "gameConfiguration": "Game configuration",
+    "gameConfigurationDesc": "Customize your game experience",
+    "cardTheme": "Card theme",
+    "numbers": "Numbers",
+    "icons": "Icons",
+    "gridSize": "Grid size",
+    "playerCount": "Number of players",
+    "playerNames": "Player names",
+    "startGame": "Start game",
+    "solo": "Solo",
+    "players": "players",
+    "moves": "Moves",
+    "time": "Time",
+    "pairs": "pairs",
+    "currentTurn": "{player}'s turn",
+    "yourTurn": "Your turn!",
+    "gameCompleted": "Game completed!",
+    "congratulations": "Congratulations!",
+    "completedInMoves": "You finished in {moves} moves!",
+    "winnerIs": "{winner} wins!"
+  },
+  "back": "Back",
+  "home": "Home",
+  "restart": "Restart",
+  "save": "Save",
+  "gameInProgress": "Game in progress",
+  "progress": "Progress",
+  "resume": "Resume",
+  "discard": "Discard",
+  "gameResumed": "Game resumed!",
+  "resumedMessage": "Continue where you left off.",
+  "autoSave": "Auto save",
+  "enabled": "Enabled",
+  "saved": "Saved",
+  "cards": {
+    "totalGames": "Total games",
+    "totalGamesDesc": "Games played in total",
+    "averageMoves": "Average moves",
+    "averageMovesDesc": "Moves on average per game",
+    "bestScore": "Best score",
+    "bestScoreDesc": "Minimum moves achieved",
+    "detailedAnalysis": "Detailed analysis"
+  },
+  "loading": "Loading...",
+  "noData": "No data available at the moment.",
+  "startPlaying": "Start playing",
+  "performance": {
+    "excellent": "Excellent memory!",
+    "good": "Good performance!",
+    "train": "Keep practicing! "
+  },
+  "progression": {
+    "experienced": "Experienced player! ",
+    "onTrack": "On the right track! ",
+    "beginner": "Promising beginner!"
+  }
 }

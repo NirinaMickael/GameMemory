@@ -5,7 +5,7 @@ import { GameStatsCard, PlayerScoredCard } from '@/components/card';
 import { useGameState } from '@/common/store';
 import { useGameLogic } from '@/features/setting/hooks';
 import { useTranslation } from '@/common/hooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { formatMessage } from '@/lib/utils';
 import { GameGrid, GameHeader } from '@/features/setting/component';
 import { WrapperLayout } from '@/components/layout/WrapperLayout';
@@ -36,7 +36,6 @@ export function GamePage() {
   const handleShowMobile = () => {
     setShowMobileMenu(!showMobileMenu);
   };
-  console.log('players', players, currentPlayer);
 
   if (!gameConfig)
     return <p className="text-center mt-10">Configuration manquante</p>;

@@ -21,7 +21,7 @@ export const formatMessage = (
 // game utils
 import type { CardType, GameTheme } from '@/features/setting/type';
 
-export function generateCards( theme: GameTheme,gridSize: string): CardType[] {
+export function generateCards( theme: GameTheme,grid_size: string): CardType[] {
   const totalCards = 16; // 4x4 grid
   const pairs = totalCards / 2;
   const cards: CardType[] = [];

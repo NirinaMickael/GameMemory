@@ -39,7 +39,7 @@ export function ControlledSelect<T extends FieldValues>({
   });
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 w-full">
       {label && <Label htmlFor={name}>{label}</Label>}
       <Select
         onValueChange={field.onChange}
