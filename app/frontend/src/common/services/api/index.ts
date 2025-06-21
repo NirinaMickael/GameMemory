@@ -4,7 +4,7 @@ import type { GetParams, PostParams } from './type';
 
 export async function GET<R>(params: GetParams): Promise<R> {
   const { path, signal, responseType, params: queryParams } = params;
-  console.log("path", path);
+  console.log('path', path);
 
   const response = await API.get<R>(path, {
     responseType,

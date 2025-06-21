@@ -211,26 +211,25 @@ export function HomePage() {
             </FormProvider>
           </CardContent>
         </Card>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Button
-          variant="outline"
-          onClick={() => router.push("/leaderboard")}
-          className="h-12 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-purple-200 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/20"
-        >
-          <Trophy className="mr-2 h-4 w-4" />
-          {t("leaderboard")}
-        </Button>
-        <Button
-          variant="outline"
-          onClick={() => router.push("/stats")}
-          className="h-12 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-blue-200 dark:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20"
-        >
-          <Settings className="mr-2 h-4 w-4" />
-          {t("statistics")}
-        </Button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Button
+            variant="outline"
+            onClick={() => router.push('/leaderboard')}
+            className="h-12 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-purple-200 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/20"
+          >
+            <Trophy className="mr-2 h-4 w-4" />
+            {t('leaderboard')}
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => router.push('/stats')}
+            className="h-12 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-blue-200 dark:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+          >
+            <Settings className="mr-2 h-4 w-4" />
+            {t('statistics')}
+          </Button>
+        </div>
       </div>
-      </div>
-
     </div>
   );
 }

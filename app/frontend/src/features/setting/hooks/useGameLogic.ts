@@ -194,19 +194,17 @@ export function useGameLogic(isResuming: boolean) {
     winner?: Player,
   ) => {
     try {
-      if(gameConfig){
-      await sendScore( {
-        moves: finalMoves,
-        duration,
-        theme: gameConfig?.theme ,
-        grid_size: gameConfig?.grid_size,
-        mode: gameConfig?.mode,
-        player_count: gameConfig?.player_count,
-        winner: winner?.name,
+      if (gameConfig) {
+        await sendScore({
+          moves: finalMoves,
+          duration,
+          theme: gameConfig?.theme,
+          grid_size: gameConfig?.grid_size,
+          mode: gameConfig?.mode,
+          player_count: gameConfig?.player_count,
+          winner: winner?.name,
+        });
       }
-      )
-      }
-
     } catch (err) {
       console.error('Failed to save score', err);
     }

@@ -5,7 +5,7 @@ export const API = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
 });
 
-console.log("VITE_BACKEND_URL",import.meta.env.VITE_BACKEND_URL);
+console.log('VITE_BACKEND_URL', import.meta.env.VITE_BACKEND_URL);
 
 // Request Interceptor
 API.interceptors.request.use(
