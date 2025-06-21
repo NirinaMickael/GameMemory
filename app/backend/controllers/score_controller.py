@@ -29,7 +29,7 @@ async def get_top_scores(db: AsyncSession = Depends(get_db)):
 async def get_stats(db: AsyncSession = Depends(get_db)):
     stats = await ScoreService(db).get_stats()
     return APIResponse(
-        data=StatsOut(**stats._asdict()),  # ou adapte selon ton retour exact
+        data=StatsOut(**stats),  
         message="Stats retrieved successfully",
         success=True
     )

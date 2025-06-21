@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from pydantic import BaseModel
 from typing import Any
+from datetime import datetime
+
 class ScoreCreate(BaseModel):
     moves: int
     duration: float
@@ -12,7 +14,7 @@ class ScoreCreate(BaseModel):
 
 class ScoreOut(ScoreCreate):
     id: int
-
+    created_at: datetime
     class Config:
         from_attributes = True
 

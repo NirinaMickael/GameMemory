@@ -13,4 +13,9 @@ class ScoreService:
         return await self.repo.get_top(10)
 
     async def get_stats(self):
-        return await self.repo.get_stats()
+       stats = await self.repo.get_stats()  
+       average_score, total_participations = stats
+       return {
+        "average_score": float(average_score or 0.0),
+        "total_participations": total_participations or 0
+       }
