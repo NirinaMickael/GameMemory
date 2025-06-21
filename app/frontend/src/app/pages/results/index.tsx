@@ -25,9 +25,8 @@ export function ResultPage() {
   const router = useRouter();
   const { gameState, gameConfig } = useGameState();
   const [stats, setStats] = useState<ScoreStats | null>(null);
-
   useEffect(() => {
-    if (gameState == 'completed') {
+    if (!gameState.completed) {
       router.push('/');
       return;
     }
@@ -59,7 +58,7 @@ export function ResultPage() {
     router.push('/');
   };
 
-  if (gameState !== 'completed') {
+  if (!gameState.completed) {
     return null;
   }
 
@@ -70,7 +69,7 @@ export function ResultPage() {
 
   return (
     <WrapperLayout>
-      <div className="w-full max-w-4xl space-y-6">
+      <div className="w-full max-w-4xl space-y-6 mx-auto">
         {/* Header */}
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center">

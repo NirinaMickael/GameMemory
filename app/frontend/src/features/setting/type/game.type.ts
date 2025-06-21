@@ -15,9 +15,9 @@ export type CardType = {
 
 export type GameConfig = {
   theme: GameTheme;
-  gridSize: GridSize;
+  grid_size: GridSize;
   mode: GameMode;
-  playerCount: number;
+  player_count: number;
   players: Player[];
 };
 

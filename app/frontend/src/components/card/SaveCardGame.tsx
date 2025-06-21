@@ -52,7 +52,7 @@ export function SavedGameCard({
               ) : (
                 <>
                   <Users className="h-3 w-3 mr-1" />
-                  {savedGame.gameConfig.playerCount} {t('game.players')}
+                  {savedGame.gameConfig.player_count} {t('game.players')}
                 </>
               )}
             </Badge>
@@ -69,7 +69,7 @@ export function SavedGameCard({
               : `🎨 ${t('game.icons')}`}
           </div>
           <div className="text-gray-600 dark:text-gray-400">
-            {savedGame.gameConfig.gridSize}
+            {savedGame.gameConfig.grid_size}
           </div>
         </div>
 

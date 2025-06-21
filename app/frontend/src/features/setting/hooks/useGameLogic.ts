@@ -3,6 +3,8 @@ import { useGameActions, useGameState } from '@/common/store';
 import { useEffect, useState } from 'react';
 import type { CardType, GameState, Player } from '../type';
 import { generateCards, shuffleArray } from '@/lib/utils';
+import { POST } from '@/common/services/api';
+import { sendScore } from '@/features/leaderBoard/services/api/score.api';
 
 export function useGameLogic(isResuming: boolean) {
   const router = useRouter();
@@ -97,7 +99,7 @@ export function useGameLogic(isResuming: boolean) {
   const initializeGame = () => {
     if (!gameConfig) return;
 
-    const newCards = generateCards(gameConfig.theme, gameConfig.gridSize);
+    const newCards = generateCards(gameConfig.theme, gameConfig.grid_size);
     setCards(shuffleArray(newCards));
     setFlippedCards([]);
     setMatchedCards([]);
@@ -179,36 +181,36 @@ export function useGameLogic(isResuming: boolean) {
         setTimeout(() => {
           setFlippedCards([]);
           if (gameConfig && gameConfig.mode === 'multiplayer') {
-            setCurrentPlayer((p) => (p + 1) % gameConfig.playerCount);
+            setCurrentPlayer((p) => (p + 1) % gameConfig.player_count);
           }
         }, 1500);
       }
     }
   };
 
-  // const saveScore = async (
-  //   finalMoves: number,
-  //   duration: number,
-  //   winner?: Player,
-  // ) => {
-  //   try {
-  //     await fetch('/api/scores', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({
-  //         moves: finalMoves,
-  //         duration,
-  //         theme: gameConfig?.theme,
-  //         gridSize: gameConfig?.gridSize,
-  //         mode: gameConfig?.mode,
-  //         playerCount: gameConfig?.playerCount,
-  //         winner: winner?.name,
-  //       }),
-  //     });
-  //   } catch (err) {
-  //     console.error('Failed to save score', err);
-  //   }
-  // };
+  const saveScore = async (
+    finalMoves: number,
+    duration: number,
+    winner?: Player,
+  ) => {
+    try {
+      if(gameConfig){
+      await sendScore( {
+        moves: finalMoves,
+        duration,
+        theme: gameConfig?.theme ,
+        grid_size: gameConfig?.grid_size,
+        mode: gameConfig?.mode,
+        player_count: gameConfig?.player_count,
+        winner: winner?.name,
+      }
+      )
+      }
+
+    } catch (err) {
+      console.error('Failed to save score', err);
+    }
+  };
 
   return {
     cards,

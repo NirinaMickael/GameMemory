@@ -2,9 +2,10 @@ import axios, { AxiosError, type InternalAxiosRequestConfig } from 'axios';
 
 // axios instance
 export const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-  withCredentials: true,
+  baseURL: import.meta.env.VITE_BACKEND_URL,
 });
+
+console.log("VITE_BACKEND_URL",import.meta.env.VITE_BACKEND_URL);
 
 // Request Interceptor
 API.interceptors.request.use(
