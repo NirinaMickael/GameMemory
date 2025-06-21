@@ -1,95 +1,387 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:is(.dark *));
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
 
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
-
-:root {
-  --radius: 0.75rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.67 0.21 261.1);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0.01 250);
-  --secondary-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.97 0.01 250);
-  --muted-foreground: oklch(0.556 0.04 250);
-  --accent: oklch(0.97 0.01 250);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.63 0.24 27);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.93 0.01 250);
-  --input: oklch(0.93 0.01 250);
-  --ring: oklch(0.67 0.21 261.1);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.7 0.22 260);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.23 0.03 260);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.23 0.03 260);
-  --muted-foreground: oklch(0.67 0.06 250);
-  --accent: oklch(0.23 0.03 260);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.42 0.16 27);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.23 0.03 260);
-  --input: oklch(0.23 0.03 260);
-  --ring: oklch(0.9 0.02 260);
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+@layer utilities {
+  /* ===== GAME CARD 3D ANIMATIONS ===== */
+
+  .game-card-container {
+    @apply relative w-full aspect-square;
+    perspective: 1000px;
+  }
+
+  .game-card-button {
+    @apply relative w-full h-full transition-all duration-300 ease-out;
+    transform-style: preserve-3d;
+    /* Minimum touch target size for accessibility */
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .game-card-button:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  .game-card-button:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Touch device optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    .game-card-button:hover {
+      transform: none;
+    }
+
+    .game-card-button:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .game-card-inner {
+    @apply relative w-full h-full transition-transform duration-700 ease-in-out;
+    transform-style: preserve-3d;
+  }
+
+  .game-card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .game-card-face {
+    @apply absolute inset-0 w-full h-full rounded-lg shadow-lg border-2;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  /* Responsive card sizing */
+  @media (max-width: 640px) {
+    .game-card-face {
+      @apply rounded-md shadow-md border;
+    }
+  }
+
+  /* Card Back Styling */
+  .game-card-back {
+    @apply bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700;
+    background-image:
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 50%
+      );
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  @media (min-width: 1024px) {
+    .game-card-back {
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .game-card-back-pattern {
+    @apply relative w-full h-full overflow-hidden rounded-md lg:rounded-lg;
+  }
+
+  .game-card-back-pattern::before {
+    content: '';
+    @apply absolute inset-0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.05) 8px,
+      rgba(255, 255, 255, 0.05) 16px
+    );
+  }
+
+  @media (min-width: 1024px) {
+    .game-card-back-pattern::before {
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.05) 10px,
+        rgba(255, 255, 255, 0.05) 20px
+      );
+    }
+  }
+
+  .game-card-back-content {
+    @apply relative w-full h-full flex items-center justify-center;
+  }
+
+  .game-card-back-shine {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    animation: shine 1.5s infinite;
+  }
+
+  .game-card-button:hover .game-card-back-shine {
+    @apply opacity-100;
+  }
+
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) skewX(-25deg);
+    }
+    100% {
+      transform: translateX(200%) skewX(-25deg);
+    }
+  }
+
+  /* Card Front Styling */
+  .game-card-front {
+    transform: rotateY(180deg);
+    box-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  @media (min-width: 1024px) {
+    .game-card-front {
+      box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .game-card-matched {
+    @apply bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30;
+    border-color: #10b981;
+    box-shadow:
+      0 0 15px rgba(16, 185, 129, 0.4),
+      0 2px 10px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  @media (min-width: 1024px) {
+    .game-card-matched {
+      box-shadow:
+        0 0 20px rgba(16, 185, 129, 0.4),
+        0 4px 20px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .game-card-front-content {
+    @apply relative w-full h-full flex items-center justify-center;
+    transform: translateZ(5px);
+  }
+
+  @media (min-width: 1024px) {
+    .game-card-front-content {
+      transform: translateZ(10px);
+    }
+  }
+
+  /* Matched Effect Animations */
+  .game-card-matched-overlay {
+    @apply absolute inset-0 pointer-events-none;
+    background: radial-gradient(
+      circle,
+      rgba(16, 185, 129, 0.2) 0%,
+      transparent 70%
+    );
+    animation: matchedPulse 1.5s ease-out;
+  }
+
+  .game-card-matched-sparkle {
+    @apply absolute inset-0;
+    background-image:
+      radial-gradient(circle at 25% 25%, #fbbf24 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, #f59e0b 1px, transparent 1px),
+      radial-gradient(circle at 50% 20%, #fbbf24 1px, transparent 1px),
+      radial-gradient(circle at 80% 50%, #f59e0b 1px, transparent 1px);
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  @media (min-width: 1024px) {
+    .game-card-matched-sparkle {
+      background-image:
+        radial-gradient(circle at 25% 25%, #fbbf24 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, #f59e0b 1px, transparent 1px),
+        radial-gradient(circle at 50% 20%, #fbbf24 1px, transparent 1px),
+        radial-gradient(circle at 80% 50%, #f59e0b 2px, transparent 2px);
+    }
+  }
+
+  @keyframes matchedPulse {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes sparkle {
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Hover Effect */
+  .game-card-hover-effect {
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 pointer-events-none;
+    background: radial-gradient(
+      circle,
+      rgba(147, 51, 234, 0.1) 0%,
+      transparent 70%
+    );
+  }
+
+  .game-card-button:hover .game-card-hover-effect {
+    @apply opacity-100;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .game-card-container {
+      perspective: 800px;
+    }
+
+    .game-card-inner {
+      transition-duration: 600ms;
+    }
+
+    .game-card-hover-effect {
+      @apply rounded-md;
+    }
+  }
+
+  /* Accessibility improvements */
+  @media (prefers-reduced-motion: reduce) {
+    .game-card-inner {
+      transition-duration: 200ms;
+    }
+
+    .game-card-back-shine,
+    .game-card-matched-sparkle {
+      animation: none;
+    }
+
+    .game-card-button:hover {
+      transform: none;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .game-card-back {
+      border-width: 3px;
+      border-color: #ffffff;
+    }
+
+    .game-card-front {
+      border-width: 3px;
+    }
+
+    .game-card-matched {
+      border-color: #000000;
+    }
+  }
+
+  /* Custom breakpoint for extra small screens */
+  @media (max-width: 475px) {
+    .game-card-face {
+      @apply rounded shadow;
+    }
   }
 }

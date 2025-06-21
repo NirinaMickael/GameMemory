@@ -30,6 +30,8 @@ export const useGameStore = create<GameStore>()(
       name: 'memory-game-storage',
       partialize: (state) => ({
         savedGame: state.savedGame,
+        gameConfig: state.gameConfig,
+        gameState: state.gameState,
       }),
     },
   ),

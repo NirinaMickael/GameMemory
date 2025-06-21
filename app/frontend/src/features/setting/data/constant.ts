@@ -1,1 +1,38 @@
-export const PLAYER_COLORS = ["bg-blue-500", "bg-red-500", "bg-green-500", "bg-yellow-500"];
+import {
+  Heart,
+  Star,
+  Sun,
+  Moon,
+  Zap,
+  Crown,
+  Diamond,
+  Flame,
+  Snowflake,
+  Music,
+  Camera,
+  Gift,
+  Rocket,
+  Palette,
+} from 'lucide-react';
+export const PLAYER_COLORS = [
+  'bg-blue-500',
+  'bg-red-500',
+  'bg-green-500',
+  'bg-yellow-500',
+];
+export const iconMap = {
+  1: Heart,
+  2: Star,
+  3: Sun,
+  4: Moon,
+  5: Zap,
+  6: Crown,
+  7: Diamond,
+  8: Flame,
+  9: Snowflake,
+  10: Music,
+  11: Camera,
+  12: Gift,
+  13: Rocket,
+  14: Palette,
+};

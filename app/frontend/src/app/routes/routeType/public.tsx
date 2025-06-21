@@ -4,11 +4,16 @@ import { HomePage } from '@/app/pages/home';
 import { LeaderBoardPage } from '@/app/pages/leaderboard';
 import { ResultPage } from '@/app/pages/results';
 import { StatPage } from '@/app/pages/stats';
+import { GamePage } from '@/app/pages/game';
 export const publicRoutes: RouteObject[] = [
   {
-    path: 'home',
+    path: '',
     index: true,
     element: <HomePage />,
+  },
+  {
+    path: 'game',
+    element: <GamePage />,
   },
   {
     path: 'leaderboard',

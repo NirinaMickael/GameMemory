@@ -31,11 +31,24 @@
     "moves": "Coups",
     "time": "Temps",
     "pairs": "paires",
-    "currentTurn": "Tour de",
+    "currentTurn": "Tour de {player}",
     "yourTurn": "À votre tour !",
     "gameCompleted": "Partie terminée !",
     "congratulations": "Félicitations !",
     "completedInMoves": "Vous avez terminé en {moves} coups !",
     "winnerIs": "Victoire de {winner} !"
-  }
+  },
+    "back": "Retour",
+    "home": "Accueil",
+    "restart": "Recommencer",
+    "save": "Sauvegarder",
+    "gameInProgress": "Partie en cours",
+    "progress": "Progression",
+    "resume": "Reprendre",
+    "discard": "Supprimer",
+    "gameResumed": "Partie reprise !",
+    "resumedMessage": "Continuez là où vous vous étiez arrêté.",
+    "autoSave": "Sauvegarde auto",
+    "enabled": "Activée",
+    "saved": "Sauvegardé"
 }

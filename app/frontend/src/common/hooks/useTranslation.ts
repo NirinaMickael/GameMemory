@@ -12,27 +12,27 @@ export const useTranslation = () => {
       i18n.changeLanguage(language);
     }
   }, [language]);
-const formatTimeAgo = (timestamp: number) => {
-  const now = Date.now();
-  const diff = now - timestamp;
-  const minutes = Math.floor(diff / (1000 * 60));
-  const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
+  const formatTimeAgo = (timestamp: number) => {
+    const now = Date.now();
+    const diff = now - timestamp;
+    const minutes = Math.floor(diff / (1000 * 60));
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
 
-  if (days > 0) {
-    const unit = days === 1 ? t('timeAgo.day') : t('timeAgo.days');
-    return formatMessage(t('timeAgo.daysAgo'), { count: days, unit });
-  }
-  if (hours > 0) {
-    const unit = hours === 1 ? t('timeAgo.hour') : t('timeAgo.hours');
-    return formatMessage(t('timeAgo.hoursAgo'), { count: hours, unit });
-  }
-  if (minutes > 0) {
-    const unit = minutes === 1 ? t('timeAgo.minute') : t('timeAgo.minutes');
-    return formatMessage(t('timeAgo.minutesAgo'), { count: minutes, unit });
-  }
-  return t('timeAgo.justNow');
-};
+    if (days > 0) {
+      const unit = days === 1 ? t('timeAgo.day') : t('timeAgo.days');
+      return formatMessage(t('timeAgo.daysAgo'), { count: days, unit });
+    }
+    if (hours > 0) {
+      const unit = hours === 1 ? t('timeAgo.hour') : t('timeAgo.hours');
+      return formatMessage(t('timeAgo.hoursAgo'), { count: hours, unit });
+    }
+    if (minutes > 0) {
+      const unit = minutes === 1 ? t('timeAgo.minute') : t('timeAgo.minutes');
+      return formatMessage(t('timeAgo.minutesAgo'), { count: minutes, unit });
+    }
+    return t('timeAgo.justNow');
+  };
 
   return {
     language,

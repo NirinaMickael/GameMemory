@@ -1,7 +1,4 @@
-import { ControlledInput } from "./ControlledInput";
-import { ControlledSelect } from "./ControlledSelect";
+import { ControlledInput } from './ControlledInput';
+import { ControlledSelect } from './ControlledSelect';
 
-export {
-    ControlledSelect,
-    ControlledInput
-}
+export { ControlledSelect, ControlledInput };

@@ -1,9 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Play, Trash2, Clock, Users, User, MousePointer } from "lucide-react";
-import type { SavedGameState } from "@/features/setting/type";
-import { useTranslation } from "@/common/hooks";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Play, Trash2, Clock, Users, User, MousePointer } from 'lucide-react';
+import type { SavedGameState } from '@/features/setting/type';
+import { useTranslation } from '@/common/hooks';
 
 type SavedGameCardProps = {
   savedGame: SavedGameState;
@@ -11,10 +11,16 @@ type SavedGameCardProps = {
   onDiscard: () => void;
 };
 
-export function SavedGameCard({ savedGame, onResume, onDiscard }: SavedGameCardProps) {
+export function SavedGameCard({
+  savedGame,
+  onResume,
+  onDiscard,
+}: SavedGameCardProps) {
   const { t, formatTimeAgo } = useTranslation();
-  const progress = (savedGame.matchedCards.length / savedGame.cards.length) * 100;
-  const currentPlayerName = savedGame.players[savedGame.currentPlayer]?.name || t('game.players');
+  const progress =
+    (savedGame.matchedCards.length / savedGame.cards.length) * 100;
+  const currentPlayerName =
+    savedGame.players[savedGame.currentPlayer]?.name || t('game.players');
 
   return (
     <Card className="backdrop-blur-sm bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border-amber-200 dark:border-amber-700 shadow-xl">
@@ -22,9 +28,14 @@ export function SavedGameCard({ savedGame, onResume, onDiscard }: SavedGameCardP
         <CardTitle className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Clock className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-            <span className="text-amber-800 dark:text-amber-200">{t('savedGame.gameInProgress')}</span>
+            <span className="text-amber-800 dark:text-amber-200">
+              {t('savedGame.gameInProgress')}
+            </span>
           </div>
-          <Badge variant="secondary" className="bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200">
+          <Badge
+            variant="secondary"
+            className="bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200"
+          >
             {formatTimeAgo(savedGame.savedAt)}
           </Badge>
         </CardTitle>
@@ -33,7 +44,7 @@ export function SavedGameCard({ savedGame, onResume, onDiscard }: SavedGameCardP
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
           <div className="flex items-center space-x-2">
             <Badge variant="outline" className="text-xs">
-              {savedGame.gameConfig.mode === "solo" ? (
+              {savedGame.gameConfig.mode === 'solo' ? (
                 <>
                   <User className="h-3 w-3 mr-1" />
                   {t('game.solo')}
@@ -53,7 +64,7 @@ export function SavedGameCard({ savedGame, onResume, onDiscard }: SavedGameCardP
             </span>
           </div>
           <div className="text-gray-600 dark:text-gray-400">
-            {savedGame.gameConfig.theme === "numbers"
+            {savedGame.gameConfig.theme === 'numbers'
               ? `🔢 ${t('game.numbers')}`
               : `🎨 ${t('game.icons')}`}
           </div>
@@ -64,9 +75,12 @@ export function SavedGameCard({ savedGame, onResume, onDiscard }: SavedGameCardP
 
         <div className="space-y-2">
           <div className="flex justify-between text-sm">
-            <span className="text-gray-600 dark:text-gray-400">{t('savedGame.progress')}</span>
             <span className="text-gray-600 dark:text-gray-400">
-              {savedGame.matchedCards.length / 2} / {savedGame.cards.length / 2} {t('game.pairs')}
+              {t('savedGame.progress')}
+            </span>
+            <span className="text-gray-600 dark:text-gray-400">
+              {savedGame.matchedCards.length / 2} / {savedGame.cards.length / 2}{' '}
+              {t('game.pairs')}
             </span>
           </div>
           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
@@ -77,13 +91,19 @@ export function SavedGameCard({ savedGame, onResume, onDiscard }: SavedGameCardP
           </div>
         </div>
 
-        {savedGame.gameConfig.mode === "multiplayer" && (
+        {savedGame.gameConfig.mode === 'multiplayer' && (
           <>
             <div className="flex items-center space-x-2 text-sm">
-              <span className="text-gray-600 dark:text-gray-400">{t('game.currentTurn')} :</span>
+              <span className="text-gray-600 dark:text-gray-400">
+                {t('game.currentTurn')} :
+              </span>
               <div className="flex items-center space-x-1">
-                <div className={`w-3 h-3 rounded-full ${savedGame.players[savedGame.currentPlayer]?.color}`} />
-                <span className="font-medium text-gray-800 dark:text-gray-200">{currentPlayerName}</span>
+                <div
+                  className={`w-3 h-3 rounded-full ${savedGame.players[savedGame.currentPlayer]?.color}`}
+                />
+                <span className="font-medium text-gray-800 dark:text-gray-200">
+                  {currentPlayerName}
+                </span>
               </div>
             </div>
 

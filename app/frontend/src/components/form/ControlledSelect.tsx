@@ -2,15 +2,15 @@ import {
   type FieldValues,
   useController,
   type UseControllerProps,
-} from "react-hook-form";
+} from 'react-hook-form';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
+} from '@/components/ui/select';
+import { Label } from '@/components/ui/label';
 
 type SelectOption = {
   value: string;
@@ -37,7 +37,7 @@ export function ControlledSelect<T extends FieldValues>({
     control,
     defaultValue,
   });
-   
+
   return (
     <div className="space-y-2">
       {label && <Label htmlFor={name}>{label}</Label>}
@@ -46,7 +46,7 @@ export function ControlledSelect<T extends FieldValues>({
         defaultValue={field.value}
         {...props}
       >
-        <SelectTrigger className={fieldState.error ? "border-red-500" : ""}>
+        <SelectTrigger className={fieldState.error ? 'border-red-500' : ''}>
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
