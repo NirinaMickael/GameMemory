@@ -52,6 +52,8 @@ services:
     networks: [GameMemoryNetworkBridge]
     working_dir: /home/node/app/
     volumes: [./app/frontend:/home/node/app/]
+    environment:
+       - VITE_BACKEND_URL=http://GAMEMEMORY_BACK:8000
     command: sh -c "npm i && npm run dev"
     ports: ["4000:5173"]
 
